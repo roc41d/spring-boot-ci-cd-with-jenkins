@@ -10,7 +10,7 @@ pipeline  {
   stages  {
     stage('Cloning repo') {
       steps {
-        git 'http://10.12.1.38:13000/rocard/spring-boot-ci-cd-with-jenkins.git'
+        git 'https://github.com/roc41d/spring-boot-ci-cd-with-jenkins.git'
       }
     }
     stage('Building image') {
@@ -32,6 +32,7 @@ pipeline  {
     stage('Cleaning up')  {
       steps {
         sh "docker rmi $registry:$BUILD_NUMBER"
+        sh "docker rmi 10.12.1.62:8083/$registry:$BUILD_NUMBER"
       }
     }
   }
