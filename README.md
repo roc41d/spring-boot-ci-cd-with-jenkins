@@ -1,2 +1,2 @@
 # Spring boot cI/cd with jenkins
-Blog post comming soon
+Blog post coming soon
